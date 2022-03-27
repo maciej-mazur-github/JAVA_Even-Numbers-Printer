@@ -14,6 +14,7 @@ public class EvenNumberPrinter {
         }
 
         int i = start;
+        int counter = 0;
 
         while (i <= end) {
             if(!isEven(i)) {
@@ -22,17 +23,23 @@ public class EvenNumberPrinter {
             } else {
                 System.out.println("Even number: " + i);
                 i++;
+                counter++;
+
+                if(counter == 5) {
+                    System.out.println("5 even numbers found. Breaking the loop");
+                    break;
+                }
             }
         }
     }
 
     public static void main(String[] args) {
-        printEvenNumbers(4, 10);
+        printEvenNumbers(4, 25);
         System.out.println("*********************************");
         printEvenNumbers(4, 4);
         System.out.println("*********************************");
         printEvenNumbers(4, 2);
         System.out.println("*********************************");
-        printEvenNumbers(4, 10);
+        printEvenNumbers(4, 16);
     }
 }
